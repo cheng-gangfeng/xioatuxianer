@@ -1,0 +1,254 @@
+/* 特有的 */
+/* banner 开始 */
+.banner {
+  height: 500px;
+  background-color: #f5f5f5;
+}
+.banner .wrapper {
+  position: relative;
+  height: 500px;
+  background-color: pink;
+}
+.banner .aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.banner .aside li {
+  height: 50px;
+  line-height: 50px;
+}
+.banner .aside a {
+  position: relative;
+  /* 块级 宽度和父级一样 */
+  display: block;
+  padding-left: 36px;
+  padding-right: 19px;
+  height: 50px;
+
+  color: #fff;
+  /* background-color: pink; */
+}
+.banner .aside a span {
+  margin-left: 15px;
+  font-size: 14px;
+}
+.banner .aside a:hover {
+  background-color: #27ba9b;
+}
+/* 在a 的里面 最后的位置加一个小箭头 标签 
+伪元素添加一个标签 ， a 是a::after和a::before的父盒子
+*/
+.banner .aside a::after {
+  /* 必须要有  */
+  /* 定位 */
+  position: absolute;
+
+  right: 19px;
+  top: 19px;
+  content: "";
+  /* display: inline-block; */
+  width: 6px;
+  height: 11px;
+  /* background-color: red; */
+  background-image: url(../images/sprites.png);
+  background-position: -80px -110px;
+}
+/* 定位调的位置 */
+/* 箭头 */
+/* 左右箭头的相同样式可写在一起 */
+.prev,
+.next {
+  position: absolute;
+  top: 228px;
+
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(../images/sprites.png);
+  border-radius: 50%;
+}
+.prev {
+  left: 260px;
+  background-position: 14px -60px;
+}
+.next {
+  right: 10px;
+  background-position: -23px -60px;
+}
+/* 圆点 */
+.banner ol {
+  position: absolute;
+  left: 680px;
+  bottom: 31px;
+  /* width: 200px; */
+  height: 10px;
+  /* background-color: pink; */
+}
+.banner ol li {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 24px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* 用户体验 */
+  cursor: pointer;
+}
+.banner ol .current {
+  background-color: #fff;
+}
+/* banner 结束 */
+/* 新鲜好物 开始 */
+/* .goods {
+  /* 高也内容成 */
+/* } */
+.goods .hd {
+  height: 114px;
+  /* background-color: pink; */
+  line-height: 114px;
+}
+.goods .hd h2 {
+  float: left;
+  height: 114px;
+  font-size: 29px;
+  font-weight: 400;
+}
+.goods .hd h2 span {
+  font-size: 16px;
+  color: #999;
+  margin-left: 34px;
+}
+.goods .hd a,
+.shengxian .hd .more {
+  float: right;
+  color: #999;
+}
+/* 给a 添加一个伪元素，并加背景图 */
+.goods .hd a::after,
+.shengxian .hd .more::after {
+  content: "";
+  display: inline-block;
+  margin-left: 13px;
+  width: 7px;
+  height: 13px;
+  background-image: url(../images/sprites.png);
+  background-position: 0 -110px;
+  vertical-align: middle;
+}
+/* li宽度高度  右浮动 调个间距 */
+.goods .bd li {
+  position: relative;
+  /* 宽度高度  */
+  float: left;
+  margin-right: 8px;
+  width: 304px;
+  height: 405px;
+  background-color: #f0f9f4;
+  text-align: center;
+  /* 跟谁对齐就是谁影响到它了 浮动 */
+}
+.goods .bd li:last-child {
+  margin-right: 0;
+}
+.goods .bd li img {
+  width: 100%;
+}
+.goods .bd li h3 {
+  /* 文字 margin给小一点 ，因为自带行高 */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.goods .bd li div {
+  color: red;
+  font-size: 17px;
+}
+.goods .bd li div span {
+  font-size: 23px;
+}
+.goods .bd li b {
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  width: 28px;
+  height: 51px;
+  border: 1px solid skyblue;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #27ba9b;
+  font-weight: normal;
+  /* 文字有默认行高 离得太远可调一下。
+    相同的可复制粘贴 样式已经写好
+    */
+  line-height: 24px;
+}
+/* 新鲜好物 结束 */
+/* 生鲜开始 */
+.shengxian .hd {
+  height: 96px;
+  line-height: 96px;
+  /* background-color: pink; */
+}
+/* 两个人长的很像 可以逗号，群组选择器  */
+.shengxian .hd h2 {
+  float: left;
+  font-size: 29px;
+  font-weight: 400;
+}
+/* 浮动调的位置 调html结构顺序 */
+.shengxian .hd .more {
+  float: right;
+}
+.shengxian .hd ul {
+  float: right;
+  margin-right: 65px;
+}
+.shengxian .hd ul li {
+  float: left;
+}
+.shengxian .hd ul a {
+  padding: 1px 7px;
+  margin-left: 6px;
+}
+.shengxian .hd ul a:hover {
+  background-color: #27ba9b;
+  color: #fff;
+}
+.shengxian .bd .left {
+  float: left;
+  width: 240px;
+  height: 610px;
+  background-color: pink;
+}
+.shengxian .bd .right {
+  float: right;
+  width: 1000px;
+  height: 610px;
+  /* background-color: skyblue; */
+}
+.shengxian .bd .right li {
+  float: left;
+  margin-left: 8px;
+  width: 242px;
+  height: 304px;
+}
+.shengxian .right img {
+  width: 204px;
+}
+.shengxian .right p {
+  margin-left: 29px;
+}
+.shengxian .right div {
+  margin-left: 29px;
+  font-size: 17px;
+  color: #9a2e1f;
+}
+.shengxian .right div span {
+  font-size: 22px;
+}
+/* 生鲜结束 */

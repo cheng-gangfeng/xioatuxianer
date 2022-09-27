@@ -1,0 +1,232 @@
+/* 各个页面相同的样式 */
+/* 做网站第一步就是确定 版心 */
+.wrapper {
+  width: 1240px;
+  margin: 0 auto;
+}
+/* 快捷导航 开始 */
+.shortcut {
+  height: 52px;
+  line-height: 52px;
+  background-color: #333333;
+}
+.shortcut .wrapper {
+  height: 52px;
+  /* background-color: pink; */
+}
+.shortcut .wrapper ul {
+  float: right;
+}
+.shortcut .wrapper li {
+  float: left;
+}
+.shortcut .wrapper .lastp {
+  border-right: 0;
+}
+
+.shortcut .wrapper a {
+  /* 没有设置宽度 padding随便加 ，宽度剩余法 （让盒子大）*/
+  padding: 0 16px;
+  border-right: 1px solid #666666;
+  font-size: 14px;
+  color: #dcdcdc;
+}
+.shortcut .wrapper a span {
+  display: inline-block;
+  width: 11px;
+  height: 16px;
+  background-image: url(../images/sprites.png);
+  background-position: -160px -70px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+/* 快捷导航结束 */
+/* 头部主导航 开始 */
+.header {
+  margin: 30px 0;
+}
+.header .wrapper {
+  height: 70px;
+
+  /* background-color: pink; */
+}
+.logo {
+  float: left;
+  width: 207px;
+  height: 70px;
+  /* background-color: #e7bcbc; */
+}
+/* logo 搜索引擎优化做法 */
+.logo h1 {
+  width: 207px;
+  height: 70px;
+}
+.logo h1 a {
+  /* 行内块可能垂直方向对齐有问题可以先转换块 */
+  display: block;
+  width: 207px;
+  height: 70px;
+  background: url(../images/logo.png);
+  /* 控制背景图的大小 */
+  background-size: contain;
+  /* 隐藏文字 */
+  font-size: 0;
+}
+
+.nav {
+  float: left;
+  margin-left: 40px;
+  /* background-color: yellow; */
+}
+.nav ul li {
+  float: left;
+  margin-right: 48px;
+  /* 行高继承 ，给的范围还是小点儿 */
+  line-height: 70px;
+}
+.nav li a {
+  padding-bottom: 6px;
+  border-bottom: 1px solid transparent;
+}
+
+/* 底边 boder -bottom 在a中也加 （透明色） ，保证位置不变，在hover的时候改变一下颜色 */
+.nav li a:hover {
+  color: aqua;
+  border-bottom: 1px solid aqua;
+}
+
+.search {
+  position: relative;
+  float: left;
+  margin-top: 24px;
+  margin-left: 34px;
+  width: 172px;
+  height: 28px;
+  /* background-color: aqua; */
+  border-bottom: 2px solid gray;
+}
+.search input {
+  width: 143px;
+  height: 100%;
+  padding-left: 30px;
+}
+/* 选中input输入框 中的文字 */
+.search input::placeholder {
+  font-size: 14px;
+  color: #cccccc;
+}
+.search span {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  /* display: block; */
+  width: 18px;
+  height: 19px;
+  background: url(../images/sprites.png) -79px -70px;
+}
+/* 购物车 背景图 */
+.car {
+  position: relative;
+  float: left;
+  margin-left: 15px;
+  margin-top: 28px;
+  width: 23px;
+  height: 23px;
+  background-color: red;
+  background: url(../images/sprites.png) -119px -69px;
+}
+.car span {
+  position: absolute;
+  top: -3px;
+  /* right: -12px; */
+  /* 当数字增加的时候符合人的书写习惯 */
+  left: 18px;
+  /* display: block; */
+  /* 不要给固定宽度，因为数字购物车会增加 */
+  /* width: 20px; */
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  color: #fff;
+  background-color: #e26237;
+  border-radius: 8px;
+}
+/* 绝对定位之后具有行内块的特点，可以不再转显示模式 */
+/* 头部主导航 结束 */
+/* 版权 开始 */
+.footer {
+  height: 343px;
+  background-color: #333333;
+}
+.footer .wrapper {
+  width: 1240px;
+}
+/* footer 联系方式区 */
+
+
+
+
+.footer .top {
+  padding-top: 69px;
+  padding-left: 135px;
+  height: 100px;
+  border-bottom: 3px solid #434343;
+}
+.footer .top li {
+  position: relative;
+  float: left;
+  margin-right: 200px;
+  width: 195px;
+  height: 59px;
+  /* background-color: pink; */
+}
+.footer .top li:last-child {
+  margin-right: 0;
+}
+/* 伪元素添加的标签  行内 */
+.footer .top li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* display: inline-block; */
+  width: 58px;
+  height: 58px;
+  content: "";
+  background: url(../images/sprites.png);
+  /* 行内块 和文字对齐   给大字添加 
+    老是对不齐 vertical-align 试过行高还不行 定位
+    */
+  vertical-align: middle;
+}
+/*第二个li里面的before添加改变背景图片位置 */
+.footer .top li:nth-child(2)::before {
+  background-position: -64px 0;
+}
+/*第三个li里面的before添加改变背景图片位置 */
+.footer .top li:nth-child(3)::before {
+  background-position: -129px 0;
+}
+.footer .top li span {
+  margin-left: 77px;
+  font-size: 28px;
+  color: #fff;
+  line-height: 58px;
+}
+
+.footer .bottom {
+  padding-top: 40px;
+
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+}
+.footer .bottom a {
+  /* display: inline-block; */
+  font-size: 14px;
+  color: #999;
+ padding: 0 5px;
+}
+.footer .bottom p{
+margin-bottom: 20px;
+}
+/* 版权 结束 */
